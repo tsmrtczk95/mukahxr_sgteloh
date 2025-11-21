@@ -16,11 +16,24 @@
           <div class="HotspotAnnotation">Metal Plaque</div>
       </button><button class="Hotspot" slot="hotspot-3" data-position="-0.99691058391209m 9.188125476267803m 0.03136285619919059m" data-normal="-0.9951847331821386m -9.742781137557754e-8m 0.09801707423294397m" data-visibility-attribute="visible">
           <div class="HotspotAnnotation">Body Replacement Chamber</div>
-      </button><button class="Hotspot" slot="hotspot-4" data-position="-0.9966594885016621m 6.082711401123339m 0.03391420175153501m" data-normal="-0.9951847331821506m 4.673818311267685e-8m 0.09801707423285902m" data-visibility-attribute="visible">
+      </button><button class="Hotspot" slot="hotspot-4" data-position="-0.9966594885016621m 6.082711401123339m 0.03391420175153501m" data-normal="-0.9951847331821506m 4.673818311267685e-8m 0.09801707423285902m" data-visibility-attribute="visible"
+                 onclick="playAudioCavity()">
           <div class="HotspotAnnotation">Carved Cavity</div>
       </button><button class="Hotspot" slot="hotspot-5" data-position="-0.36779179279906327m 12.494410819541041m -0.41448013699034886m" data-normal="-0.632198218242451m -0.08312214481036456m -0.7703350711821416m" data-visibility-attribute="visible">
           <div class="HotspotAnnotation">Symbolic Iron Wood Jar for King &amp; Nobles</div>
       </button>
+      
+      //
+      <audio id="audio-cavity" src="audio/_cavity.mp3"></audio>
+      <script>
+        function playAudioCavity() {
+          const audio = document.getElementById('audio-cavity');
+          audio.currentTime = 0;     // restart if already played
+          audio.play();
+        }
+      </script>
+      //
+      
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
