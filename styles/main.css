@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.viewer-panel {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar: Hidden on mobile by default, slides in */
+.ui-sidebar {
+  width: 320px;
+  background: #f9f9f9;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Mobile: hide sidebar off-screen */
+@media (max-width: 768px) {
+  .ui-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    transform: translateX(100%);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  }
+  .ui-sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+.top-nav {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-icon, .btn-home {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.menu {
+  padding: 16px;
+}
+
+.btn-nav {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-nav:hover {
+  background: #d0d0d0;
+}
+
+.content-area {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
