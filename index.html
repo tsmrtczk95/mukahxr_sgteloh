@@ -1,40 +1,46 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; template</title>
+    <title>Mukah Xplorer - Jerunei Sungai Misan</title>
     <meta charset="utf-8">
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./components/viewer-ui.css">
   </head>
   <body>
-    <style>
-      /* Desktop layout (default) */
-      .ui-buttons {
-        position: absolute; top: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 10; }
-      .ui-buttons button {
-        padding: 10px 14px; background: rgba(0,0,0,0.7); color: white; font-size: 14px; border: none; border-radius: 8px; cursor: pointer; touch-action: manipulation; }
-        /*padding: 8px 12px; background: rgba(0,0,0,0.7); color: white; border: none; border-radius: 6px; cursor: pointer; }*/
-      .HotspotAnnotation {
-        background: rgba(0,0,0,0.7); padding: 6px 10px; border-radius: 6px; color: white; }
-      /* Mobile layout */
-      @media (max-width: 768px){
-        .ui-buttons { top: auto; bottom: 20px; left: 50%; transform: translateX(-50%); flex-direction: row; gap: 6px;}
-        .ui-buttons button { padding: 8px 10px; font-size: 12px; border-radius: 6px; } }
-      @media (max-width: 420px) { 
-        .ui-buttons { bottom: 12px; flex-wrap: wrap; gap: 5px; width: 95%; justify-content: center; }
-        .ui-buttons button { flex: 1 0 30%; padding: 8px; font-size: 11px; } }
-    </style>
-    <div style="position:relative; width:100%; height:100vh; overflow: hidden;">
-      <div class="ui-buttons">
-        <button onclick="window.location.href='https://sites.google.com/poliku.edu.my/mukahxplore/3d-experiences?read_current=1'">Homepage</button>
-        <button onclick="openVideo()">Video</button>
-        <button onclick="openPhoto()">Photo</button>
-        <button onclick="openInfo()">Info</button>
-        <button onclick="openOuiz()">Quiz</button>
-      </div>
-      <!-- <model-viewer> HTML element -->
-        <model-viewer src="3D - jerunei sungai misan (glb).glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.png" shadow-intensity="1" camera-orbit="260.4deg 73.1deg 34.05m" field-of-view="30deg" style="width:100%;height:100%;">
+<!-- Top Navigation Bar -->
+    <header class="topbar">
+      <div class="logo">My WebXR Project</div>
+      <nav class="desktop-nav">
+        <button data-open="home">Home</button>
+        <button data-open="audio">Audio</button>
+        <button data-open="video">Video</button>
+        <button data-open="articles">Articles</button>
+        <button data-open="quiz">Quiz</button>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Menu">☰</button>
+    </header>
+<!-- Slide-up Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <button data-open="home">Home</button>
+      <button data-open="audio">Audio</button>
+      <button data-open="video">Video</button>
+      <button data-open="articles">Articles</button>
+      <button data-open="quiz">Quiz</button>
+    </div>
+<!-- <model-viewer> HTML element. -->
+    <main id="viewerHost" class="viewer-host">
+        <model-viewer src="3D - jerunei sungai misan (glb).glb" 
+          ar ar-modes="webxr scene-viewer quick-look" 
+          ar-scela="auto"
+          camera-controls tone-mapping="neutral"
+          poster="./assets/images/poster.png" 
+          shadow-intensity="1"
+          camera-orbit="260.4deg 73.1deg 34.05m"
+          field-of-view="30deg"
+          style="width:100%;height:100vh;">
+          
           <button class="Hotspot" slot="hotspot-1" 
             data-position="-1.646555227809907m 0.9688571249054583m -2.0181741153461057m" 
             data-normal="0m 0.9999999999998863m -4.7683715799999993e-7m" 
@@ -68,7 +74,7 @@
             data-normal="-0.632198218242451m -0.08312214481036456m -0.7703350711821416m" 
             data-visibility-attribute="visible">
             <div class="HotspotAnnotation">Symbolic Iron Wood Jar for King &amp; Nobles</div></button>      
-          <!--AUDIO SECTION -->
+<!--AUDIO SECTION -->
           <audio id="hotspot-audio"></audio>
           <script>
             let currentButton = null;
@@ -108,9 +114,18 @@
           <img src="ar_hand_prompt.png">
       </div>
     </model-viewer>
+    </main>
+<!-- SLIDE UP CONTENT PANEL. -->
+    <div id="contentPanel" class="content-panel" aria-hidden="true">
+      <div id="contentHeader" class="content-header">
+        <span id="panelTitle">Content</span>
+        <button id="closePanel" aria-label="Close panel">✕</button>
       </div>
-    <script src="script.js"></script>
-    <!-- Loads <model-viewer> for browsers: -->
+      <div id="contentBody" class="content-body"></div>
+    </div>
+<!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script type="module" src="./components/ui.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
