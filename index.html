@@ -31,70 +31,119 @@
     </div>
 <!-- <model-viewer> HTML element. -->
     <main id="viewerHost" class="viewer-host">
-        <model-viewer src="./3D - jerunei sungai misan (glb).glb" 
-          ar ar-modes="webxr scene-viewer quick-look" 
-          ar-scela="auto"
-          camera-controls tone-mapping="neutral"
-          poster="./assets/images/poster.png" 
-          shadow-intensity="1"
-          camera-orbit="260.4deg 73.1deg 34.05m"
-          field-of-view="30deg"
-          style="width:100%;height:100vh;">
-          
-          <button class="Hotspot" slot="hotspot-1" 
-            data-position="-1.646555227809907m 0.9688571249054583m -2.0181741153461057m" 
-            data-normal="0m 0.9999999999998863m -4.7683715799999993e-7m" 
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Base</div></button>      
-          
-          <button class="Hotspot" slot="hotspot-2" 
-            data-position="-4.045382494808573m 4.121988860138356m -0.08515393607204501m" 
-            data-normal="-1m -1.1147771939877675e-24m 0m" 
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Metal Plaque</div></button>      
-          
-          <button class="Hotspot" slot="hotspot-3" 
-            data-position="-0.99691058391209m 9.188125476267803m 0.03136285619919059m" 
-            data-normal="-0.9951847331821386m -9.742781137557754e-8m 0.09801707423294397m" 
-            data-visibility-attribute="visible"
-            data-audio="assets/audio/about_bodychamber.mp3"
-            onclick="playAudio(this)">
-            <div class="HotspotAnnotation">Body Replacement Chamber</div></button>
-          
-          <button class="Hotspot" slot="hotspot-4" 
-            data-position="-0.9966594885016621m 6.082711401123339m 0.03391420175153501m" 
-            data-normal="-0.9951847331821506m 4.673818311267685e-8m 0.09801707423285902m" 
-            data-visibility-attribute="visible"
-            data-audio="assets/audio/about_cavity.mp3"
-            onclick="playAudio(this)">
-            <div class="HotspotAnnotation">Carved Cavity</div></button>
-          
-          <button class="Hotspot" slot="hotspot-5" 
-            data-position="-0.36779179279906327m 12.494410819541041m -0.41448013699034886m" 
-            data-normal="-0.632198218242451m -0.08312214481036456m -0.7703350711821416m" 
-            data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Symbolic Iron Wood Jar for King &amp; Nobles</div></button>      
+      <model-viewer src="./3D - jerunei sungai misan (glb).glb" 
+        ar ar-modes="webxr scene-viewer quick-look" 
+        ar-scale="auto"
+        camera-controls tone-mapping="neutral"
+        poster="./assets/images/poster.png" 
+        shadow-intensity="1"
+        camera-orbit="260.4deg 73.1deg 34.05m"
+        field-of-view="30deg"
+        style="width:100%;height:100vh;">
+
+        <button class="Hotspot" slot="hotspot-1" 
+          data-position="-1.646555227809907m 0.9688571249054583m -2.0181741153461057m" 
+          data-normal="0m 0.9999999999998863m -4.7683715799999993e-7m" 
+          data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Base</div></button>      
+        
+        <button class="Hotspot" slot="hotspot-2" 
+          data-position="-4.045382494808573m 4.121988860138356m -0.08515393607204501m" 
+          data-normal="-1m -1.1147771939877675e-24m 0m" 
+          data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Metal Plaque</div></button>      
+        
+        <button class="Hotspot" slot="hotspot-3" 
+          data-position="-0.99691058391209m 9.188125476267803m 0.03136285619919059m" 
+          data-normal="-0.9951847331821386m -9.742781137557754e-8m 0.09801707423294397m" 
+          data-visibility-attribute="visible"
+          data-audio="./assets/audio/about_bodychamber.mp3"
+          onclick="playAudio(this)">
+          <div class="HotspotAnnotation">Body Replacement Chamber</div></button>
+        
+        <button class="Hotspot" slot="hotspot-4" 
+          data-position="-0.9966594885016621m 6.082711401123339m 0.03391420175153501m" 
+          data-normal="-0.9951847331821506m 4.673818311267685e-8m 0.09801707423285902m" 
+          data-visibility-attribute="visible"
+          data-audio="./assets/audio/about_cavity.mp3"
+          onclick="playAudio(this)">
+          <div class="HotspotAnnotation">Carved Cavity</div></button>
+        
+        <button class="Hotspot" slot="hotspot-5" 
+          data-position="-0.36779179279906327m 12.494410819541041m -0.41448013699034886m" 
+          data-normal="-0.632198218242451m -0.08312214481036456m -0.7703350711821416m" 
+          data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Symbolic Iron Wood Jar for King &amp; Nobles</div></button>      
 <!--AUDIO SECTION -->
-          <audio id="hotspot-audio"></audio>
-          <script>
-            let currentButton = null;
-            let audioPlayer = null;
-            
-            window.onload = () => {
-              audioPlayer = document.getElementById("hotspot-audio");};
-            // Toggle play/pause
-            function playAudio(button) { // Get all audio elements
-              const audioSrc = button.getAttribute("data-audio");
-              // if same hotspot clicked again => toggle
-              if (currentButton === button) {
-                if (audioPlayer.paused) {
-                  audioPlayer.play();
+        <audio id="hotspot-audio"></audio>
+        <script>
+          let currentButton = null;
+          let audioPlayer = null;
+          
+          window.onload = () => {
+            audioPlayer = document.getElementById("hotspot-audio");};
+          // Toggle play/pause
+          function playAudio(button) { // Get all audio elements
+            const audioSrc = button.getAttribute("data-audio");
+            // if same hotspot clicked again => toggle
+            if (currentButton === button) {
+              if (audioPlayer.paused) {
+                audioPlayer.play();
                 } else {
-                  audioPlayer.pause();
+                audioPlayer.pause();
                 }
-                return; }
-              // If switching to another hotspot → stop previous
-              if (currentButton !== null) {
+              return; }// If switching to another hotspot → stop previous
+            import { loadAudioList, loadVideoList, loadArticleText, loadPDF, loadExternalURL, loadQuiz, closePanelExternal } from './components/ui.js';
+
+// Example lists - update to match your assets
+const audioList = [{label:'Narration - English', src:'./assets/audio/audio1.mp3'}];
+const videoList = [{label:'Demo Video', src:'./assets/video/video1.mp4'}];
+
+document.querySelectorAll('[data-open]').forEach(btn=>{
+  btn.addEventListener('click', async (ev)=>{
+    const type = btn.dataset.open;
+    if(type==='audio') loadAudioList(audioList);
+    else if(type==='video') loadVideoList(videoList);
+    else if(type==='articles') {
+      // toggle example: load text file; you can create a list UI instead
+      await loadArticleText('./assets/articles/article1.txt','Article: Intro');
+    }
+    else if(type==='quiz') {
+      await loadQuiz('./assets/quiz/quiz1.json');
+    }
+    else if(type==='home') {
+      // navigate to homepage or close panel
+      closePanelExternal();
+      // window.location.href = '/';
+    }
+  });
+});
+
+// mobile drawer toggle
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const drawer = document.getElementById('mobile-drawer');
+mobileBtn.addEventListener('click', ()=> {
+  const open = drawer.style.display==='flex';
+  drawer.style.display = open ? 'none' : 'flex';
+  drawer.setAttribute('aria-hidden', String(open));
+});
+
+// hotspot example: click on hotspot open content (delegated)
+document.addEventListener('click', (e)=>{
+  const el = e.target.closest('.Hotspot');
+  if(el){
+    // customize by data-attributes on hotspot element
+    const id = el.getAttribute('slot') || 'hotspot';
+    // for demo, open article
+    loadArticleText('./assets/articles/article1.txt', 'Hotspot: '+id);
+    }
+  });
+
+// Accessibility: close panel with Escape
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){
+    closePanelExternal();
+  }
+}); (currentButton !== null) {
                 audioPlayer.pause();
                 audioPlayer.currentTime = 0;}
               // Load new audio
