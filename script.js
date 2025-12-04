@@ -17,7 +17,8 @@ import { loadAudioList, loadVideoList, loadArticleText, loadPDF, loadExternalURL
 
 // Example lists - update to match your assets
 const audioList = [{label:'Narration - English', src:'./assets/audio/audio1.mp3'}];
-const videoList = [{label:'Jerunei - Tiang Pengembumian Masyarakat Melanau', src:'./assets/video/vid_jerunei_tiang.mp4'}];
+const videoList = [{label:'Jerunei - Tiang Pengembumian Masyarakat Melanau', src:'./assets/video/vid_jerunei_tiang.mp4'},
+                  {label:'Jerunei - Tiang Pengembumian Masyarakat Melanau', src:'./assets/video/vid_jerunei_tiang.mp4'}];
 
 document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', async (ev)=>{
