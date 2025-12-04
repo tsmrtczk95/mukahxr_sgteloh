@@ -41,7 +41,7 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
       await loadArticleText('./assets/articles/article1.txt','Article: Intro');
     }
     else if(type==='quiz') {
-      await loadQuiz('./assets/quiz/quiz1.json');
+      await loadQuiz('./assets/quiz/quiz.json');
     }
     else if(type==='home') {
       // navigate to homepage or close panel
