@@ -35,7 +35,8 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
     else if(type==='articles') {
       // toggle example: load text file; you can create a list UI instead
       // await loadArticleText('./assets/articles/article1.txt','Article: Intro');
-      await loadArticleText(articleList);
+      await loadArticleText('./assets/article/wiki_jerunei.pdf','Wiki: Jerunei');
+      // await loadArticleText(articleList);
     }
     else if(type==='quiz') {
       await loadQuiz('./assets/quiz/quiz.json');
