@@ -23,7 +23,7 @@ const videoList = [
   {label:'Demo Video',
    src:'./assets/video/video1.mp4'}
 ];
-const articleList = [{label: "Wiki: Jerunei", src:"./assets/article/wiki_jerunei.pdf", type: "pdf"}];
+//const articleList = [{label: "Wiki: Jerunei", src:"./assets/article/wiki_jerunei.pdf", type: "pdf"}];
 
 document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', async (ev)=>{
@@ -34,8 +34,8 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
     }
     else if(type==='articles') {
       // toggle example: load text file; you can create a list UI instead
-      // await loadArticleText('./assets/articles/article1.txt','Article: Intro');
-      loadArticleText(articleList);
+      await loadArticleText('./assets/articles/text.txt','Article: About the Jerunei');
+      // loadArticleText(articleList);
     }
     else if(type==='quiz') {
       await loadQuiz('./assets/quiz/quiz.json');
