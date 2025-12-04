@@ -1,0 +1,22 @@
+{
+  "title": "Sample Quiz",
+  "questions": [
+    {
+      "q": "What material is shown in hotspot-1?",
+      "options": [
+        "Wood",
+        "Metal",
+        "Plastic"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Is the model interactive?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "answer": 0
+    }
+  ]
+}
