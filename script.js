@@ -17,14 +17,18 @@ import { loadAudioList, loadVideoList, loadArticleText, loadPDF, loadExternalURL
 
 // Example lists - update to match your assets
 const audioList = [{label:'Narration - English', src:'./assets/audio/audio1.mp3'}];
-const videoList = [{label:'Jerunei - Tiang Pengembumian Masyarakat Melanau', src:'./assets/video/vid_jerunei_tiang.mp4'},
-                  {label:'Demo Video', src:'./assets/video/video1.mp4'}];
+const videoList = [
+  {label:'Jerunei - Tiang Pengembumian Masyarakat Melanau', src:'./assets/video/vid_jerunei_tiang.mp4'},
+  {label:'Demo Video', src:'./assets/video/video1.mp4'}
+];
 
 document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', async (ev)=>{
     const type = btn.dataset.open;
     if(type==='audio') loadAudioList(audioList);
-    else if(type==='video') loadVideoList(videoList);
+    else if(type==='video') {
+      loadVideoList(videoList);
+    }
     else if(type==='articles') {
       // toggle example: load text file; you can create a list UI instead
       await loadArticleText('./assets/articles/article1.txt','Article: Intro');
