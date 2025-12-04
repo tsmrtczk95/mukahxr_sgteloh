@@ -16,7 +16,10 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
 import { loadAudioList, loadVideoList, loadArticleText, loadPDF, loadExternalURL, loadQuiz, closePanelExternal } from './components/ui.js';
 
 // Example lists - update to match your assets
-const audioList = [{label:'Narration - English', src:'./assets/audio/audio1.mp3'}];
+const audioList = [
+  {label:'About Jerunei: Body Replacement Chamber', src:'./assets/audio/about_bodychamber.mp3'},
+  {label:'About Jerunei: Carved Cavity', src:'./assets/audio/about_cavity.mp3'}
+];
 const videoList = [
   {label:'Jerunei : Tiang Pengembumian Masyarakat Melanau',
    src:'./assets/video/vid_jerunei_tiang.mp4'},
