@@ -23,6 +23,7 @@ const videoList = [
   {label:'Demo Video',
    src:'./assets/video/video1.mp4'}
 ];
+const articleList = [{label: 'Wiki: Jerunei', src:'./assets/article/wiki_jerunei.pdf'}];
 
 document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', async (ev)=>{
@@ -33,7 +34,8 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
     }
     else if(type==='articles') {
       // toggle example: load text file; you can create a list UI instead
-      await loadArticleText('./assets/articles/article1.txt','Article: Intro');
+      // await loadArticleText('./assets/articles/article1.txt','Article: Intro');
+      await loadArticleText(articleList);
     }
     else if(type==='quiz') {
       await loadQuiz('./assets/quiz/quiz.json');
@@ -54,7 +56,7 @@ mobileBtn.addEventListener('click', ()=> {
   drawer.style.display = open ? 'none' : 'flex';
   drawer.setAttribute('aria-hidden', String(open));
 });
-
+/*
 // hotspot example: click on hotspot open content (delegated)
 document.addEventListener('click', (e)=>{
   const el = e.target.closest('.Hotspot');
@@ -65,7 +67,7 @@ document.addEventListener('click', (e)=>{
     loadArticleText('./assets/articles/article1.txt', 'Hotspot: '+id);
   }
 });
-
+*/
 // Accessibility: close panel with Escape
 document.addEventListener('keydown',(e)=>{
   if(e.key==='Escape'){
