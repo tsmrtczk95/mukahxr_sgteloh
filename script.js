@@ -23,7 +23,7 @@ const videoList = [
   {label:'Demo Video',
    src:'./assets/video/video1.mp4'}
 ];
-const articleList = [{label: 'Wiki: Jerunei', src:'./assets/article/wiki_jerunei.pdf'}];
+const articleList = [{label: "Wiki: Jerunei", src:"./assets/article/wiki_jerunei.pdf", type: "pdf"}];
 
 document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', async (ev)=>{
@@ -35,8 +35,7 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
     else if(type==='articles') {
       // toggle example: load text file; you can create a list UI instead
       // await loadArticleText('./assets/articles/article1.txt','Article: Intro');
-      await loadArticleText('./assets/article/wiki_jerunei.pdf','Wiki: Jerunei');
-      // await loadArticleText(articleList);
+      loadArticleText(articleList);
     }
     else if(type==='quiz') {
       await loadQuiz('./assets/quiz/quiz.json');
@@ -57,7 +56,7 @@ mobileBtn.addEventListener('click', ()=> {
   drawer.style.display = open ? 'none' : 'flex';
   drawer.setAttribute('aria-hidden', String(open));
 });
-/*
+/* DISABLED HOTSPOT TO ARTICLE
 // hotspot example: click on hotspot open content (delegated)
 document.addEventListener('click', (e)=>{
   const el = e.target.closest('.Hotspot');
@@ -75,3 +74,68 @@ document.addEventListener('keydown',(e)=>{
     closePanelExternal();
   }
 });
+// == NEW 2025-12-04 ==
+UI.openArticle = function(article) {
+  const viewer = document.getElementById("articleViewer");
+
+  // Load PDF using iframe
+  viewer.innerHTML = `
+    <iframe 
+      src="${article.src}" 
+      style="width:100%; height:100%; border:0;"
+      allowfullscreen>
+    </iframe>
+  `;
+
+  UI.openArticleModal();
+};
+
+UI.loadArticleList = function(list) {
+  const container = document.getElementById("articleContainer");
+  container.innerHTML = "";
+
+  list.forEach(article => {
+    const item = document.createElement("button");
+    item.textContent = article.label;
+
+    item.onclick = () => UI.openArticle(article);
+
+    container.appendChild(item);
+  });
+};
+/**********
+****NEW****/
+// Load article list into the side panel
+function loadArticleList(list) {
+  const container = document.getElementById('articleContainer');
+  container.innerHTML = "";
+
+  list.forEach(article => {
+    const btn = document.createElement("button");
+    btn.className = "list-item";
+    btn.textContent = article.label;
+
+    btn.addEventListener("click", () => {
+      openPDF(article.src, article.label);
+    });
+
+    container.appendChild(btn);
+  });
+
+  openPanel("articles");
+}
+
+// Show PDF in the modal/iframe
+function openPDF(src, title) {
+  const viewer = document.getElementById("articleViewer");
+  viewer.innerHTML = `
+    <iframe 
+      src="${src}" 
+      style="width:100%; height:100%; border:none;" 
+      allowfullscreen>
+    </iframe>
+  `;
+
+  document.getElementById("articleTitle").textContent = title;
+  openPanel("article-viewer");
+}
