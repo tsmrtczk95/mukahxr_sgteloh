@@ -32,7 +32,7 @@
   justify-content: flex-start;
 }
 
-.annotation {
+.screen-annotation {
   pointer-events: auto;
   transform: translateY(100px); /* SAME Y offset for all */
 }
