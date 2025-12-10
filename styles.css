@@ -10,6 +10,7 @@
                    flex-direction: column;
                    align-items: center; /* THIS centers all annotations horizontally */
                    justify-content: flex-start;
+                   gap: 12px;
                   }
 
 .screen-annotation { background-color: #3184dd;
