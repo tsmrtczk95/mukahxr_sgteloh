@@ -17,8 +17,10 @@ import { loadAudioList, loadVideoList, loadArticleText, loadPDF, loadExternalURL
 
 // Example lists - update to match your assets
 const audioList = [
-  {label:'About Jerunei: Body Replacement Chamber', src:'./assets/audio/about_bodychamber.mp3'},
-  {label:'About Jerunei: Carved Cavity', src:'./assets/audio/about_cavity.mp3'}
+  {label:'Jerunei: The Melanau Burial Pole with Human Sacrifice', src:'./assets/audio/sgteloh_01_intro.mp3'},
+  {label:'The Meaning of Jerunei', src:'./assets/audio/sgteloh_02.mp3'},
+  {label:'The Structure of Jerunei', src:'./assets/audio/sgteloh_03.mp3'},
+  {label:'How Jerunei Burial Ritual Ends?', src:'./assets/audio/sgteloh_04.mp3'}
 ];
 const videoList = [
   {label:'Jerunei : Tiang Pengembumian Masyarakat Melanau',
@@ -31,7 +33,9 @@ const videoList = [
 document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', async (ev)=>{
     const type = btn.dataset.open;
-    if(type==='audio') loadAudioList(audioList);
+    if(type==='audio') {
+      loadAudioList(audioList);
+    }
     else if(type==='video') {
       loadVideoList(videoList);
     }
