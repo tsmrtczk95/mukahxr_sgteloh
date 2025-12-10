@@ -26,8 +26,6 @@
                     border-radius: 30px;
                     width: max-content;
                     text-wrap: nowrap;
-                    /**/
-                    flex: 0 0 auto;
                    }
 @media (max-width: 768px) { 
   .annotation-layer { overflow-x: auto; /* enable horizontal scrolling */
