@@ -1,3 +1,12 @@
+/*ADDED ON-SCREEN ANNOTATION*/
+.OnScreenAnnotation {
+  background-color: #888888;
+  position: absolute;
+  transform: translate(10px, 10px);
+  border-radius: 10px;
+  padding: 10px;
+}
+
 :root{
   --accent:#0ea5a4;
   --bg:#0b0b0b;
