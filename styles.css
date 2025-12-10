@@ -12,7 +12,7 @@
                    justify-content: flex-start;
                   }
 
-.screen-annotation { background-color: #888888;
+.screen-annotation { background-color: #3184dd;
                     pointer-events: auto; 
                     transform: translateY(100px); /* SAME Y offset for all */
                     cursor: pointer;
