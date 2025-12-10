@@ -31,7 +31,7 @@
   .annotation-layer { overflow-x: auto; /* enable horizontal scrolling */
                      overflow-y: hidden;
                      white-space: nowrap; /* keep labels in a single row */
-                     padding: 0 16px; /* breathing space on edges */
+                     /*padding: 0 16px; /* breathing space on edges */
                      pointer-events: auto; /* allow swipe + tap */
                     }
   .annotation-layer::-webkit-scrollbar { display: none; /* hide scrollbar for clean UI */ }
