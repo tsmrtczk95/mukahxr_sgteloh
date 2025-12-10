@@ -4,7 +4,7 @@
                    left: 0;
                    width: 100%;
                    height: 100%;
-                   pointer-events: auto; /* so model still receive mouse drag */
+                   pointer-events: none; /* so model still receive mouse drag */
                    /**/
                    display: flex;
                    flex-direction: row;
@@ -27,19 +27,19 @@
                     width: max-content;
                     text-wrap: nowrap;
                    }
-/*@media (max-width: 768px) { 
-  .annotation-layer { overflow-x: auto; /* enable horizontal scrolling *
+@media (max-width: 768px) { 
+  .annotation-layer { overflow-x: auto; /* enable horizontal scrolling */
                      overflow-y: hidden;
-                     white-space: nowrap; /* keep labels in a single row *
-                     padding: 0 16px; /* breathing space on edges *
-                     pointer-events: auto; /* allow swipe + tap *
+                     white-space: nowrap; /* keep labels in a single row */
+                     padding: 0 16px; /* breathing space on edges */
+                     pointer-events: auto; /* allow swipe + tap */
                     }
-  .annotation-layer::-webkit-scrollbar { display: none; /* hide scrollbar for clean UI * }
-  .annotation { flex: 0 0 auto; /* prevent labels from shrinking *
-               transform: translateY(80px); /* optional: adjust for mobile *
-               margin-right: 12px; /* spacing replacement for gap *
+  .annotation-layer::-webkit-scrollbar { display: none; /* hide scrollbar for clean UI */ }
+  .annotation { flex: 0 0 auto; /* prevent labels from shrinking */
+               transform: translateY(80px); /* optional: adjust for mobile */
+               margin-right: 12px; /* spacing replacement for gap */
                }
-}*/
+}
 
 /**/
 :root{
