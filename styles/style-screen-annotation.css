@@ -1,5 +1,5 @@
 /*ADDED ON-SCREEN ANNOTATION*/
-/*.screenAnnotation {
+.screen-annotation {
   background-color: #888888;
   position: absolute;
   transform: translate(10px, 100px);
@@ -17,7 +17,7 @@
   top: 50%;
   width: max-content;
 }
-*/
+
 .annotation-layer {
   position: absolute;
   top: 0;
@@ -31,8 +31,4 @@
   align-items: center; /* THIS centers all annotations horizontally */
   justify-content: flex-start;
 }
-
-.screen-annotation {
-  pointer-events: auto;
-  transform: translateY(100px); /* SAME Y offset for all */
-}
+/* .screen-annotation { pointer-events: auto; transform: translateY(100px); }*/ /* SAME Y offset for all */
