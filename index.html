@@ -44,16 +44,21 @@
           environment-image="./assets/images/sunrise_hdr_1k.hdr"
           skybox-image="./assets/images/sky-sgteloh.jpeg">
           
-          <button class="Hotspot" slot="hotspot-1" data-position="1.4378500727804264m -0.3163699514967142m -1.9636456058793292m" data-normal="0m -4.76837158e-7m -0.9999999999998864m" data-visibility-attribute="visible">
+          <button class="Hotspot" slot="hotspot-1" data-position="1.4378500727804264m -0.3163699514967142m -1.9636456058793292m" 
+            data-normal="0m -4.76837158e-7m -0.9999999999998864m" data-visibility-attribute="visible">
             <div class="HotspotAnnotation">Base</div></button>
           
-          <button class="Hotspot" slot="hotspot-2" data-position="1.9111651920078798m 4.111045685666406m -0.564865758824161m" data-normal="1m 0m 0m" data-visibility-attribute="visible"
-            data-audio="assets/audio/about_bodychamber.mp3" onclick="playAudio(this)">
+          <button class="Hotspot" slot="hotspot-2" data-position="1.9111651920078798m 4.111045685666406m -0.564865758824161m" 
+            data-normal="1m 0m 0m" data-visibility-attribute="visible">
+            <!--data-audio="assets/audio/about_bodychamber.mp3" onclick="playAudio(this)"-->
             <div class="HotspotAnnotation">Metal Plaque</div></button>
           
-          <button class="Hotspot" slot="hotspot-3" data-position="1.024559899352698m 9.385738914819257m -0.1647941136325639m" data-normal="0.9945218330168205m 0.00015840108976040106m -0.10452893648152234m" data-visibility-attribute="visible"
-            data-audio="assets/audio/about_cavity.mp3" onclick="playAudio(this)">
+          <button class="Hotspot" slot="hotspot-3" data-position="1.024559899352698m 9.385738914819257m -0.1647941136325639m" 
+            data-normal="0.9945218330168205m 0.00015840108976040106m -0.10452893648152234m" data-visibility-attribute="visible">
+            <!--data-audio="assets/audio/about_cavity.mp3" onclick="playAudio(this)"-->
             <div class="HotspotAnnotation">Jerunei</div></button>
+                   
+          <div class="annotation" data-audio="assets/audio/sgteloh_01_intro.mp3" onclick="playAudio(this)">Play Audio</div>
           
 <!--AUDIO SECTION -->
           <audio id="hotspot-audio"></audio>
