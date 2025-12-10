@@ -26,6 +26,7 @@
                     padding: 8px 50px;
                     border-radius: 30px;
                     width: max-content;
+                    flex-wrap: wrap;
                    }
 /**/
 :root{
