@@ -33,6 +33,7 @@
                      white-space: nowrap; /* keep labels in a single row */
                      -webkit-overflow-scrolling: touch; /* smoother scrolling for mobile */
                      justify-content: flex-start;
+                     gap: 8px;
                     }
   /*.annotation-layer::-webkit-scrollbar { display: none; } /* hide scrollbar for clean UI */
   .annotation { padding: 8px 40px; font-size: 12px; }/* allow text wrapping inside */
