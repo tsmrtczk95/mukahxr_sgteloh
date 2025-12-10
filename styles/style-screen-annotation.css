@@ -1,5 +1,5 @@
 /*ADDED ON-SCREEN ANNOTATION*/
-.screen-annotation {
+/*.screen-annotation {
   background-color: #888888;
   position: absolute;
   transform: translate(10px, 100px);
@@ -17,19 +17,24 @@
   top: 50%;
   width: max-content;
   cursor: pointer;
-}
+}*/
 
-.annotation-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* so model still receive mouse drag */
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* THIS centers all annotations horizontally */
-  justify-content: flex-start;
-}
-/* .screen-annotation { pointer-events: auto; transform: translateY(100px); }*/ /* SAME Y offset for all */
+.annotation-layer { position: absolute;
+                   top: 0;
+                   left: 0;
+                   width: 100%;
+                   height: 100%;
+                   pointer-events: none; /* so model still receive mouse drag */
+                   
+                   display: flex;
+                   flex-direction: column;
+                   align-items: center; /* THIS centers all annotations horizontally */
+                   justify-content: flex-start;
+                  }
+
+.screen-annotation { background-color: #888888;
+                    pointer-events: auto; 
+                    transform: translateY(100px); /* SAME Y offset for all */
+                    cursor: pointer;
+                   }
+
