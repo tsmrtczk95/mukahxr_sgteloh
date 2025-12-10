@@ -16,6 +16,7 @@
   padding: 10px;
   top: 50%;
   width: max-content;
+  cursor: pointer;
 }
 
 .annotation-layer {
