@@ -117,6 +117,18 @@
       </div>
       <div id="contentBody" class="content-body"></div>
     </div>
+<!-- IMAGE GALLERY. -->    
+    <div id="imageModal" class="modal">
+      <span class="closeBtn" onclick="closeGallery()">&times;</span> <!-- Close button -->
+      <div class="gallery-container"> <!-- Image container -->
+        <img id="galleryImage" class="modal-content" />
+      </div>
+      <div class="gallery-nav"> <!-- Navigation -->
+        <button class="nav-btn" onclick="prevImage()">&#10094;</button>
+        <button class="nav-btn" onclick="nextImage()">&#10095;</button>
+      </div>
+      <div id="galleryCaption"></div> <!-- Caption -->
+    </div>
 <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script type="module" src="./components/ui.js"></script>
