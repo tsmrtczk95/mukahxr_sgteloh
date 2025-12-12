@@ -19,6 +19,11 @@
         <button data-open="video">Video</button>
         <button data-open="articles">Articles</button>
         <button data-open="quiz">Quiz</button>
+        <button onclick="openGallery(
+                ['assets/images/sgteloh_00.jpeg','assets/images/sgteloh_01.jpeg','assets/images/sgteloh_02.jpeg',
+                 'assets/images/sgteloh_03.jpeg','assets/images/sgteloh_04.jpeg'],
+                ['Sungai Teloh Jerunai in 3D','Jerunai Close-Up','Sungai Teloh Jerunai from Distance',
+                 'On Path to Jerunai','Chosen Slave Tied to Jerunei'])">Gallery</button>
       </nav>
       <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </header>
@@ -29,6 +34,11 @@
       <button data-open="video">Video</button>
       <button data-open="articles">Articles</button>
       <button data-open="quiz">Quiz</button>
+      <button onclick="openGallery(
+                ['assets/images/sgteloh_00.jpeg','assets/images/sgteloh_01.jpeg','assets/images/sgteloh_02.jpeg',
+                 'assets/images/sgteloh_03.jpeg','assets/images/sgteloh_04.jpeg'],
+                ['Sungai Teloh Jerunai in 3D','Jerunai Close-Up','Sungai Teloh Jerunai from Distance',
+                 'On Path to Jerunai','Chosen Slave Tied to Jerunei'])">Gallery</button>
     </div>
 <!-- <model-viewer> HTML element. -->
     <main id="viewerHost" class="viewer-host">
@@ -59,6 +69,7 @@
             <!--data-audio="assets/audio/about_cavity.mp3" onclick="playAudio(this)"-->
             <div class="HotspotAnnotation">Jerunei</div></button>
 
+          <!--
           <div class="annotation-layer">
             <div class="screen-annotation" data-audio="assets/audio/sgteloh_01_intro.mp3" onclick="playAudio(this)">Audio 1</div>
             <div class="screen-annotation" data-audio="assets/audio/sgteloh_02.mp3" onclick="playAudio(this)">Audio 2</div>
@@ -72,6 +83,7 @@
                  'On Path to Jerunai','Chosen Slave Tied to Jerunei'])">Gallery</div>
             <div class="screen-annotation">Video</div>
           </div>
+          -->
           
 <!--AUDIO SECTION -->
           <audio id="hotspot-audio"></audio>
